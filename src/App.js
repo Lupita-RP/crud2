@@ -6,9 +6,9 @@ import EditUserForm from './components/EditUserForm';
 
 function App() {
   const usersData = [
-    { id: uuidv4(), name: "Tania", username: "floppydiskette" },
-    { id: uuidv4(), name: "Craig", username: "siliconeidolon" },
-    { id: uuidv4(), name: "Ben", username: "benisphere" },
+    { id: uuidv4(), name: "Tania", username: "Floppydiskette" },
+    { id: uuidv4(), name: "Craig", username: "Siliconeidolon" },
+    { id: uuidv4(), name: "Ben", username: "Benisphere" },
   ];
 
   //state
@@ -22,7 +22,7 @@ function App() {
 
   //eliminar usuarios
   const deleteUser = (id) => {
-    const arrayFiltrado = users.filter(user => user.is !== id);
+    const arrayFiltrado = users.filter(user => user.id !== id);
     setUsers(arrayFiltrado)
   }
 
@@ -43,7 +43,7 @@ function App() {
   const updateUser = (id, updatedUser) => {
     setEditing(false);
 
-    setUsers(users.map(user => (user.id === id ? updateUser : user)))
+    setUsers(users.map(user => (user.id === id ? updatedUser : user)))
   }
 
   return (
